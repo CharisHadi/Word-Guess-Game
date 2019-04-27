@@ -17,6 +17,7 @@ var words_list = [
     "Craft",
 ]
 var wins = 0, losses = 0;
+var startvalue = 0;
 function game_start(){
     document.getElementById("start").innerHTML= " "
     
@@ -30,14 +31,14 @@ function game_start(){
     //console.log(word_chosen);
 
     //ensuring word doesn't cycle every keystroke
-    if( wins === 0){
+    if( startvalue === 0){
     document.getElementById("guess-word").innerHTML= words_list[randomindex];
     };
     document.onkeyup = function guess(){
         var letter = event.key.toLowerCase();
         //checking that key presses are being logged properly
         //console.log(letter);
-    wins +=1;
+    startvalue += 1;
     }
 }
 
