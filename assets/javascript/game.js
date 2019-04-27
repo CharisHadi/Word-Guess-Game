@@ -1,4 +1,4 @@
-//words_list lenght: 14    
+//words_list lenght: 14 
 var words_list = [
     "Oregon",
     "Weed",
@@ -18,28 +18,52 @@ var words_list = [
 ]
 var wins = 0, losses = 0;
 var startvalue = 0;
-function game_start(){
-    document.getElementById("start").innerHTML= " "
+
+function game_play(){
+    document.getElementById("start").innerHTML= ""
     
 
     var randomindex = Math.trunc((Math.random() * 100)%(words_list.length));
-    //checking which index is chosen
-    //console.log(randomindex);
+
 
     var word_chosen = words_list[randomindex];
-    //checking word is properly stored in word_chosen
-    //console.log(word_chosen);
 
-    //ensuring word doesn't cycle every keystroke
-    if( startvalue === 0){
+    if(startvalue === 0){
     document.getElementById("guess-word").innerHTML= words_list[randomindex];
     };
-    document.onkeyup = function guess(){
-        var letter = event.key.toLowerCase();
-        //checking that key presses are being logged properly
-        //console.log(letter);
+    var guesses = 
+    
+    guess();
+
+
     startvalue += 1;
-    }
 }
 
 
+function guess(){
+        var letter = event.key.toLowerCase();
+        var guessed_let = document.createTextNode(letter.toUpperCase());
+        var guessed_list = document.getElementById("guessed-letters").innerHTML;
+
+        for(i=0 ; i <= guessed_list.length ; i++){
+           
+            if(guessed_list.length == 0){
+                console.log( "guessed: " + letter, "length: " + guessed_list.length);
+                document.getElementById("guessed-letters").appendChild(guessed_let);
+                break;
+            }
+            else if(guessed_list[i] == letter.toUpperCase()){
+                console.log(i);
+                if(guessed_list[i] != letter.toUpperCase()){
+                    console.log( "guessed: " + letter, "length: " + guessed_list.length);
+                    document.getElementById("guessed-letters").appendChild(guessed_let);
+                    break;
+                }
+                continue;
+            }
+        }
+            
+        
+
+
+}

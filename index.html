@@ -6,18 +6,22 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<body onkeydown = "game_start()">
+<body onkeydown = "game_play()">
     <h1>Oregon-Themed Word Guesser</h1>
     <h4 id = "start">Press any key to start</h4>
     <div >
         <div>Word: </div> 
         <div id = "guess-word"></div>
     </div>
-    <div id = "guesses-left">Guesses Left: </div>
-    <div id = "guessed-letters">Guessed Letters: </div>
+    <div>Guesses Left: </div>
+    <div id = "guesses-left"></div>
+    <div>Guessed Letters: </div>
+    <div id = "guessed-letters"></div>
 
     <div>Wins:</div>
+    <div id = "wins"></div>
     <div>Losses:</div>
+    <div id = "losses"></div>
 
     <script src ="assets/javascript/game.js"></script>
 </body>
