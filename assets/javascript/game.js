@@ -44,26 +44,25 @@ function guess(){
         var letter = event.key.toLowerCase();
         var guessed_let = document.createTextNode(letter.toUpperCase());
         var guessed_list = document.getElementById("guessed-letters").innerHTML;
-
-        for(i=0 ; i <= guessed_list.length ; i++){
-           
+       // console.log("guessed_list length: " + guessed_list.length);
+        for(i=-1 ; i < (guessed_list.length) ; i++){
+           // console.log("For Loop: ", "guess is: " + letter.toUpperCase(), "letter in index: " + guessed_list[i], "i = " + i);
             if(guessed_list.length == 0){
-                console.log( "guessed: " + letter, "length: " + guessed_list.length);
+               // console.log("if statement");
                 document.getElementById("guessed-letters").appendChild(guessed_let);
                 break;
             }
             else if(guessed_list[i] == letter.toUpperCase()){
-                console.log(i);
-                if(guessed_list[i] != letter.toUpperCase()){
-                    console.log( "guessed: " + letter, "length: " + guessed_list.length);
-                    document.getElementById("guessed-letters").appendChild(guessed_let);
-                    break;
-                }
-                continue;
+             //   console.log("cont, index: " + i);
+                break;
             }
-        }
-            
-        
+            else if(guessed_list[i] != letter.toUpperCase() && i == (guessed_list.length-1)){
+                //console.log("else-if #2");
+                document.getElementById("guessed-letters").appendChild(guessed_let);
+                break;
+            }
+        }   
+    //console.log("___________________________________")
 
 
 }
