@@ -1,0 +1,8 @@
+body{
+    background-image: url("../images/body.jpg");
+}
+div{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: #ffffff;
+}
