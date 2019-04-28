@@ -89,7 +89,8 @@ function guess(word, hidden_word){
                 return 1;
             }
         }
-    }   
+    }
+    else{return 0;}   
 }
 
 function randomize(){
